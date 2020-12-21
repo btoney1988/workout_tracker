@@ -44,4 +44,6 @@ https://secure-fjord-68385.herokuapp.com/
  -Click here to check out the deployed application:
 https://secure-fjord-68385.herokuapp.com/
 
+![image](https://user-images.githubusercontent.com/68873509/102829318-d87a4c80-43b4-11eb-8eb9-9923423478f4.png)
+
  https://github.com/btoney1988/workout_tracker

@@ -1,4 +1,4 @@
-const Workout = require("./workout");
-module.exports = {
+import Workout from "./workout";
+export default {
   Workout
 };
