@@ -6,7 +6,7 @@ const apiRoutes = require("./routes/apiRoutes");
 
 const PORT = process.env.PORT || 3000;
 
-let app = express();
+const app = express();
 
 app.use(logger("dev"));
 
