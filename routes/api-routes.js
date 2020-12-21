@@ -1,7 +1,7 @@
 const db = require("../models");
+const router = require("express").Router();
 
-module.exports = function (app) {
-  app.get("/api/workouts", (req, res) => {
+  router.get("/api/workouts", (req, res) => {
     db.Workout.find({}).sort({ day: -1 }).limit(1)
       .then(dbWorkout => {
         res.json(dbWorkout);
@@ -11,7 +11,7 @@ module.exports = function (app) {
       });
   });
 
-  app.get("/api/workouts/range", (req, res) => {
+  router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({})
       .then(dbWorkout => {
         res.json(dbWorkout);
@@ -21,7 +21,7 @@ module.exports = function (app) {
       });
   });
 
-  app.put("/api/workouts/:id", (req, res) => {
+  router.put("/api/workouts/:id", (req, res) => {
 
     let urlData = req.params;
     let data = req.body;
@@ -47,7 +47,7 @@ module.exports = function (app) {
       });
 
   });
-  app.post("/api/workouts", (req,res) => {
+  router.post("/api/workouts", (req,res) => {
 
   let data = req.body;
 
@@ -60,4 +60,5 @@ module.exports = function (app) {
       res.json(err);
     });
 });
-}
+
+module.exports= router;

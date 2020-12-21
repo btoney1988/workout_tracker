@@ -1,27 +1,28 @@
 // Server Dependencies
 const express = require("express");
-const bodyParser = require('body-parser');
+const mongoose = require("mongoose");
+require("dotenv/config");
 
-// Database Connection Request
-require('dotenv/config');
-const connectDB = require("./config/connectDB.js");
-const db = require("./models");
+const PORT = process.env.PORT || 3000;
 
-let app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(express.static("/public"));
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use(express.static("public"));
 
 
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true
+});
 
-let PORT = process.env.PORT || 9090;
-
-connectDB()
-
+app.use(require("./routes/html-routes.js"));
+app.use(require("./routes/api-routes.js"));
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function () {
   // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
+  console.log("App running on port" + PORT);
 });
