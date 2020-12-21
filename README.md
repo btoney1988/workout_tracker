@@ -6,7 +6,7 @@
  - This is a workout tracker app. The user is able to view, create, and track workouts. User is able to log multiple exercises on a given day, as well as track name, type, weight, sets, reps, and duration of exercises. If exercises are cardio, the user will be able to enter distance traveled.
  
  Check out the deployed application here:
-
+https://secure-fjord-68385.herokuapp.com/
 
 # Table of contents
 
@@ -42,6 +42,6 @@
  - If you have any questions about workout_tracker feel free to contact me at btoney1988@gmail.com or create an issue at https://github.com/btoney1988/workout_tracker
  
  -Click here to check out the deployed application:
-
+https://secure-fjord-68385.herokuapp.com/
 
  https://github.com/btoney1988/workout_tracker
